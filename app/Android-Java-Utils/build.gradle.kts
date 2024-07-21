@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    id("maven-publish")
 }
 
 android {
@@ -17,6 +18,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -37,4 +42,20 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+androidComponents {
+    onVariants { variant ->
+        publishing {
+            publications {
+                create<MavenPublication>(variant.name) {
+                    groupId = "com.elegidocodes"
+                    artifactId = "android-java-utils"
+                    version = "1.0.1"
+
+                    from(components.findByName(variant.name))
+                }
+            }
+        }
+    }
 }
