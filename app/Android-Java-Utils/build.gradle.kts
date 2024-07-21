@@ -18,10 +18,6 @@ android {
     }
 
     buildTypes {
-        debug {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -39,19 +35,21 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.swipeRefreshLayout)
+    implementation(libs.zxingAndroidEmbedded)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
 
 androidComponents {
-    onVariants { variant ->
+    onVariants(selector().withBuildType("release")) { variant ->
         publishing {
             publications {
                 create<MavenPublication>(variant.name) {
                     groupId = "com.elegidocodes"
                     artifactId = "android-java-utils"
-                    version = "1.0.1"
+                    version = "1.0.2"
 
                     from(components.findByName(variant.name))
                 }
