@@ -43,17 +43,17 @@ dependencies {
 }
 
 androidComponents {
-    onVariants(selector().withBuildType("release")) { variant ->
+    onVariants { variant ->
         publishing {
             publications {
                 create<MavenPublication>(variant.name) {
                     groupId = "com.elegidocodes"
                     artifactId = "Android-Java-Utils"
-                    version = "1.0.4"
-
+                    version = "1.0.5"
                     from(components.findByName(variant.name))
                 }
             }
         }
     }
 }
+
