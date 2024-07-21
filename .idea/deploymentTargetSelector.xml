@@ -8,6 +8,9 @@
       <SelectionState runConfigName="app.androidjavautils">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="app.Android-Java-Utils">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>
