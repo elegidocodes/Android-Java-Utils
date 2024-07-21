@@ -48,8 +48,8 @@ androidComponents {
             publications {
                 create<MavenPublication>(variant.name) {
                     groupId = "com.elegidocodes"
-                    artifactId = "android-java-utils"
-                    version = "1.0.2"
+                    artifactId = "Android-Java-Utils"
+                    version = "1.0.3"
 
                     from(components.findByName(variant.name))
                 }
