@@ -1,4 +1,4 @@
-package com.elegidocodes.android.java.utils.dimension;
+package com.elegido.android.java.utils.dimension;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

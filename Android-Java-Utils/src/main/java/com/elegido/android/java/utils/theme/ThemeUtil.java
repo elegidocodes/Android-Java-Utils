@@ -1,4 +1,4 @@
-package com.elegidocodes.android.java.utils.theme;
+package com.elegido.android.java.utils.theme;
 
 import android.content.Context;
 import android.content.res.Configuration;

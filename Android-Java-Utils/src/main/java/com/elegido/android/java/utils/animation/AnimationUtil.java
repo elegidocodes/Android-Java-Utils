@@ -1,4 +1,4 @@
-package com.elegidocodes.android.java.utils.animation;
+package com.elegido.android.java.utils.animation;
 
 import android.text.TextUtils;
 import android.widget.TextView;

@@ -1,9 +1,9 @@
-package com.elegidocodes.android.java.utils.layout;
+package com.elegido.android.java.utils.layout;
 
 import android.content.Context;
 import android.content.res.Configuration;
 
-import com.elegidocodes.android.java.utils.dimension.ScreenUtil;
+import com.elegido.android.java.utils.dimension.ScreenUtil;
 
 public class GridLayoutUtil {
 

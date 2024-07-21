@@ -1,4 +1,4 @@
-package com.elegidocodes.android.java.utils.network;
+package com.elegido.android.java.utils.network;
 
 import android.content.Context;
 import android.content.Intent;
