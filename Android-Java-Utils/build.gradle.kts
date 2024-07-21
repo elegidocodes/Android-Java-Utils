@@ -57,3 +57,13 @@ androidComponents {
     }
 }
 
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/elegidocodes/Android-Java-Utils")
+            }
+        }
+    }
+}
