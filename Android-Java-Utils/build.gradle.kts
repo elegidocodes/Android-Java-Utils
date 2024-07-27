@@ -22,6 +22,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -47,7 +48,7 @@ androidComponents {
         publishing {
             publications {
                 create<MavenPublication>(variant.name) {
-                    groupId = "com.elegidocodes"
+                    groupId = "com.github.elegidocodes"
                     artifactId = "Android-Java-Utils"
                     version = "1.0.5"
                     from(components.findByName(variant.name))
@@ -63,6 +64,10 @@ afterEvaluate {
             maven {
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/elegidocodes/Android-Java-Utils")
+                credentials {
+                    username = project.findProperty("gpr.user")?.toString() ?: System.getenv("GITHUB_ACTOR")
+                    password = project.findProperty("gpr.token")?.toString() ?: System.getenv("GITHUB_TOKEN")
+                }
             }
         }
     }
